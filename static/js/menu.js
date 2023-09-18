@@ -5,9 +5,8 @@ for (let i = 0; i < tabs.length; i++) {
     const current = document.getElementsByClassName('header-tab-selected');
     current[0].classList.remove('header-tab-selected');
     this.classList.add('header-tab-selected');
-    const windowHeight = window.innerHeight;
     const documentHeight = document.body.clientHeight;
-    scroll(0, i/5 * (documentHeight - windowHeight));
+    scroll(0, i/5 * documentHeight);
   });
 }
 
@@ -19,9 +18,7 @@ function selectTab(tab_index){
 
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
     const documentHeight = document.body.clientHeight;
-
-    const currentSlide = Math.min(parseInt((scrollY / (documentHeight - windowHeight)) * 5), 4);
+    const currentSlide = Math.min(parseInt(scrollY / documentHeight * 5), 4);
     selectTab(currentSlide);
 });

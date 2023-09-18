@@ -50,8 +50,11 @@ button{
 .header-logo{
     height: 5vh;
     aspect-ratio: 1;
-    background-color: var(--primary-color);
     cursor: pointer;
+}
+
+.header-logo svg{
+    transform: translateY(1vh);
 }
 
 .header-menu{
