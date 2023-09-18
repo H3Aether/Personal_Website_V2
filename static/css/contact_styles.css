@@ -44,15 +44,9 @@ h3{
 }
 
 .contact-columns button{
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    font-weight: 700;
-    height: 42px;
-    width: 140px;
-    cursor: pointer;
     display: block;
     margin: 0 auto;
+    font-size: 0.8em;
 }
 
 .footer-text{
