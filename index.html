@@ -3,6 +3,8 @@
     <head>
         <title>Alexis Boussaroque</title>
         <link rel="stylesheet" href="static/css/styles.css">
+        <link rel="stylesheet" href="static/css/aboutme_styles.css">
+        <link rel="stylesheet" href="static/css/contact_styles.css">
     </head>
     <body>
         <!-- HEADER -->
@@ -37,9 +39,64 @@
         </div>
 
         <!-- ABOUT ME -->
+        <div class="slide" style="border: 2px solid red">
+            <div class="aboutme-columns">
+                <div class="column">
+                    <h2>ABOUT ME</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis leo purus, egestas egestas ante <b>vitae</b>, maximus eleifend augue.
+                        Aliquam et <b>condimentum</b> nunc. Duis nec ornare dui, vitae dictum lacus.
+                        Donec non erat nisl.
+                        Suspendisse tincidunt tempus tellus, vel aliquam ipsum pretium id.
+                        Ut rutrum ut felis vel <b>pellentesque</b>.
+                    </p>
+                </div>
+                <div class="column">
+                    <h2>MY OBJECTIVES</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
         <div class="slide"></div>
         <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="slide"></div>
+
+        <!-- CONTACT -->
+        <div class="slide">
+            <h2>LET'S GET IN TOUCH</h2>
+            <p class="contact-message">
+                If my profile sparked your interest, you can contact me in different ways.
+                I am currently looking for a 6 months internship in Japan, starting March 2024, and would be happy to hear from you!
+            </p>
+            <div class="contact-columns">
+                <div class="column">
+                    <div class="contact-icon"></div>
+                    <h3>Email</h3>
+                    <p>
+                        Send me an email if you have any inquiry about my profile.
+                        <b>alexis.boussaroque@gmail.com</b>
+                    </p>
+                    <button onclick="window.open('mailto:alexis.boussaroque@gmail.com', '_self')">WRITE ME</button>
+                </div>
+                <div class="column">
+                    <div class="contact-icon"></div>
+                    <h3>LinkedIn</h3>
+                    <p>
+                        Let’s connect on LinkedIn to stay updated on my endeavors.
+                    </p>
+                    <button onclick="window.open('https://www.linkedin.com/in/alexis-boussaroque-a80697221/', '_blank')">MY PROFILE</button>
+                </div>
+                <div class="column">
+                    <div class="contact-icon"></div>
+                    <h3>WhatsApp</h3>
+                    <p>
+                        Text me or call me on WhatsApp for a more convenient discussion.
+                    </p>
+                    <button id="phoneNumberButton" onclick="console.log(document.getElementById('phoneNumberButton').innerText = '+33 7 82 79 73 76')">MY NUMBER</button>
+                </div>
+            </div>
+            <p class="footer-text">Built from scratch by me. 2023.</p>
+        </div>
     </body>
 </html>

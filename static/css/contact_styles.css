@@ -1,0 +1,63 @@
+.slide:nth-child(6) h2{
+    text-align: center;
+    margin: 10% 0 3% 0;
+}
+
+.contact-message{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.contact-columns{
+    height: 40%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-columns .column{
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-icon{
+    background-color: black;
+    border-radius: 50%;
+    height: 75px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+h3{
+    font-size: 1.6em;
+    text-align: center;
+    margin: 0;
+}
+
+.contact-columns p{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.contact-columns button{
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: 700;
+    height: 42px;
+    width: 140px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-text{
+    margin-top: 10%;
+    text-align: center;
+    color: #a9a9a9;
+    font-size: 0.8em;
+}
