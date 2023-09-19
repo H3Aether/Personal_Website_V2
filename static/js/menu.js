@@ -1,4 +1,5 @@
 const tabs = document.getElementsByClassName('header-tab');
+const numTabs = tabs.length;
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', function () {
@@ -6,7 +7,7 @@ for (let i = 0; i < tabs.length; i++) {
     current[0].classList.remove('header-tab-selected');
     this.classList.add('header-tab-selected');
     const documentHeight = document.body.clientHeight;
-    scroll(0, i/5 * documentHeight);
+    scroll(0, i/numTabs * documentHeight);
   });
 }
 
@@ -19,6 +20,6 @@ function selectTab(tab_index){
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
     const documentHeight = document.body.clientHeight;
-    const currentSlide = Math.min(parseInt(scrollY / documentHeight * 5), 4);
+    const currentSlide = Math.min(parseInt(scrollY / documentHeight * numTabs), numTabs-1);
     selectTab(currentSlide);
 });
