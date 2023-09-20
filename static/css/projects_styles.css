@@ -1,12 +1,12 @@
-#projectsSlide h2{
+#workSlide h2{
     margin-bottom: 2%;
 }
 
-#projectsSlide h2:first-child{
+#workSlide h2:first-child{
     margin-top: 10%;
 }
 
-.carrer-carousel{
+.career-carousel{
     width: 100%;
     height: 19vh;
     padding-bottom: 2vh;
@@ -14,14 +14,16 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .job{
-    width: 42vh;
-    margin-right: 10vh;
+    width: 40%;
+    padding-right: 10vh;
     padding-left: 3vh;
     border-left: 1.2vh solid var(--primary-color);
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .job h3{
@@ -34,10 +36,10 @@
 
 .job i{
     display: inline-block;
-    width: 2vh;
+    width: 2.2vh;
     aspect-ratio: 1;
-    background-color: black;
     margin-right: 1vh;
+    transform: translateY(0.2vh);
 }
 
 .job p:nth-child(2){
@@ -62,24 +64,40 @@
 }
 
 .project{
-    width: 70vh;
-    margin-right: 10vh;
+    width: 50%;
+    padding-right: 10vh;
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.project-image-container{
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 10%;
+    margin-right: 3vh;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .project-image{
     height: 100%;
-    aspect-ratio: 1;
+    width: 100%;
     background-size: cover;
     background-position: center;
-    border-radius: 10%;
-    margin-right: 3vh;
+    background-repeat: no-repeat;
+    transition-duration: 333ms;
+}
+
+.project:hover .project-image{
+    transform: scale(1.1);
 }
 
 .project h3{
     text-align: left;
+    font-size: 2.8vh;
     margin-bottom: 2vh;
 }
 
@@ -94,4 +112,26 @@
     font-size: 1.6vh;
     padding: 0.6vh 2vh;
     border-radius: 1vh;
+}
+
+.projects-carousel-indicators{
+    width: 100%;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-indicator{
+    width: 0.8vh;
+    aspect-ratio: 1;
+    margin: 0 0.4vh;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    transition-duration: 333ms;
+}
+
+.indicator-selected{
+    background-color: var(--primary-color);
+    transform: scale(1.6) translateY(0.0vh);
 }

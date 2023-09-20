@@ -18,7 +18,7 @@
                 <div class="header-tab header-tab-selected">HOME</div>
                 <div class="header-tab">ABOUT ME</div>
                 <div class="header-tab">MY SKILLS</div>
-                <div class="header-tab">MY PROJECTS</div>
+                <div class="header-tab">MY WORK</div>
                 <div class="header-tab">CONTACT</div>
             </div>
         </div>
@@ -172,62 +172,67 @@
             </div>
         </div>
 
-        <!-- PROJECTS -->
-        <div class="slide" id="projectsSlide">
+        <!-- WORK -->
+        <div class="slide" id="workSlide">
             <h2>MY CAREER</h2>
-            <div class="carrer-carousel">
+            <div class="career-carousel">
+                <!-- Add a new job here -->
                 <div class="job">
                     <h3>Safran Electronics & Defense Services Asia</h3>
                     <p>Continuous Improvement Intern</p>
-                    <p><i></i>Singapore.<b></b>Mar 2023 - Aug 2023</p>
+                    <p><i style="background-image: url('static/images/flags/flag_sg.svg');"></i>Singapore.<b></b>Mar 2023 - Aug 2023</p>
                 </div>
                 <div class="job">
-                    <h3>Dordogne Electronic Manufactury (FEDD)</h3>
+                    <h3>Dordogne Electronics Manufactury (FEDD)</h3>
                     <p>NADCAP Certification Intern</p>
-                    <p><i></i>France.<b></b>Jan 2022</p>
+                    <p><i style="background-image: url('static/images/flags/flag_fr.svg');"></i>France.<b></b>Jan 2022</p>
                 </div>
             </div>
             <h2>MY PERSONAL PROJECTS</h2>
             <div class="projects-carousel">
-                <div class="project">
-                    <div class="project-image" style="background-image: url('static/images/dummy_image.jpg');"></div>
+                <!-- Add a new project here -->
+                <div class="project" onclick="window.open('https://github.com/H3Aether/Euronext-Paris-API', '_blank')">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background-image: url('static/images/projects/stock_api.jpg');"></div>
+                    </div>
                     <div class="project-description">
-                        <h3>Hello my name is Alexis Gachet, I am an AI doctor.</h3>
+                        <h3>Created a REST API to get real-time data from the Euronext Paris stock exchange.</h3>
                         <div class="project-tags">
-                            <span class="project-tag">Genius</span>
-                            <span class="project-tag">20.6</span>
-                            <span class="project-tag">Best in France</span>
-                            <span class="project-tag">Pull up</span>
-                            <span class="project-tag">#2good4u</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Web scrapping</span>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project-image" style="background-image: url('static/images/dummy_image.jpg');"></div>
+                <div class="project" onclick="window.open('https://github.com/H3Aether/Hash-Table-Cpp', '_blank')">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background-image: url('static/images/projects/hash_tables.jpg');"></div>
+                    </div>
                     <div class="project-description">
-                        <h3>Hello my name is Alexis Gachet, I am an AI doctor.</h3>
+                        <h3>Implemented the hash table data structure in C++ for efficient search through large datasets.</h3>
                         <div class="project-tags">
-                            <span class="project-tag">Genius</span>
-                            <span class="project-tag">20.6</span>
-                            <span class="project-tag">Best in France</span>
-                            <span class="project-tag">Pull up</span>
-                            <span class="project-tag">#2good4u</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Data structure</span>
+                            <span class="project-tag">Optimization</span>
+                            <span class="project-tag">Template class</span>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="project-image" style="background-image: url('static/images/dummy_image.jpg');"></div>
+                <div class="project" onclick="">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background-image: url('static/images/projects/car_model.jpg');"></div>
+                    </div>
                     <div class="project-description">
-                        <h3>Hello my name is Alexis Gachet, I am an AI doctor.</h3>
+                        <h3>Set up a mathematical model of a car and simulated it.</h3>
                         <div class="project-tags">
-                            <span class="project-tag">Genius</span>
-                            <span class="project-tag">20.6</span>
-                            <span class="project-tag">Best in France</span>
-                            <span class="project-tag">Pull up</span>
-                            <span class="project-tag">#2good4u</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Mechanics</span>
+                            <span class="project-tag">Simulation</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="projects-carousel-indicators">
             </div>
         </div>
 
@@ -270,5 +275,5 @@
     </body>
 
     <script src="static/js/menu.js"></script>
-    <!-- <script src="static/js/scroll.js"></script> -->
+    <script src="static/js/carousel.js"></script>
 </html>
