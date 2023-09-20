@@ -3,14 +3,10 @@ const numTabs = tabs.length;
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', function () {
-    const current = document.getElementsByClassName('header-tab-selected');
-    current[0].classList.remove('header-tab-selected');
+    const current = document.getElementsByClassName('header-tab-selected')[0];
+    current.classList.remove('header-tab-selected');
     this.classList.add('header-tab-selected');
-    const documentHeight = document.body.clientHeight;
-    window.scrollTo({
-      top: i/numTabs * documentHeight,
-      behavior: "smooth",
-    });
+    scrollToSlide(i);
   });
 }
 
@@ -18,6 +14,14 @@ function selectTab(tab_index){
     const current = document.getElementsByClassName('header-tab-selected');
     current[0].classList.remove('header-tab-selected');
     tabs[tab_index].classList.add('header-tab-selected');
+}
+
+function scrollToSlide(slide_index){
+  const documentHeight = document.body.clientHeight;
+  window.scrollTo({
+    top: slide_index/numTabs * documentHeight,
+    behavior: "smooth"
+  });
 }
 
 window.addEventListener('scroll', function () {

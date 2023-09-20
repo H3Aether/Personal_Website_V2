@@ -25,6 +25,5 @@ function selectIndicator(indicator_index){
 projectsCarousel.addEventListener('scroll', function () {
     const scrollX = projectsCarousel.scrollLeft;
     const currentPage = parseInt(scrollX / (projectWidth*projectsPerPage) + 0.5);
-    console.log(currentPage);
     selectIndicator(currentPage);
 });
