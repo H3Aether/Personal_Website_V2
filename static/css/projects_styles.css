@@ -1,0 +1,97 @@
+#projectsSlide h2{
+    margin-bottom: 2%;
+}
+
+#projectsSlide h2:first-child{
+    margin-top: 10%;
+}
+
+.carrer-carousel{
+    width: 100%;
+    height: 19vh;
+    padding-bottom: 2vh;
+    margin-bottom: 6vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.job{
+    width: 42vh;
+    margin-right: 10vh;
+    padding-left: 3vh;
+    border-left: 1.2vh solid var(--primary-color);
+    flex-shrink: 0;
+}
+
+.job h3{
+    text-align: left;
+}
+
+.job p{
+    margin: 1vh 0 0 0;
+}
+
+.job i{
+    display: inline-block;
+    width: 2vh;
+    aspect-ratio: 1;
+    background-color: black;
+    margin-right: 1vh;
+}
+
+.job p:nth-child(2){
+    font-size: 2.5vh;
+}
+
+.job p:last-child{
+    margin-top: 4vh;
+}
+
+.job p > b{
+    margin-right: 3vh;
+}
+
+.projects-carousel{
+    width: 100%;
+    height: 25vh;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.project{
+    width: 70vh;
+    margin-right: 10vh;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.project-image{
+    height: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    margin-right: 3vh;
+}
+
+.project h3{
+    text-align: left;
+    margin-bottom: 2vh;
+}
+
+.project-tags{
+    line-height: 3.5vh;
+}
+
+.project-tag{
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 1.6vh;
+    padding: 0.6vh 2vh;
+    border-radius: 1vh;
+}

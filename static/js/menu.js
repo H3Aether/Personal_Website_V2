@@ -7,7 +7,10 @@ for (let i = 0; i < tabs.length; i++) {
     current[0].classList.remove('header-tab-selected');
     this.classList.add('header-tab-selected');
     const documentHeight = document.body.clientHeight;
-    scroll(0, i/numTabs * documentHeight);
+    window.scrollTo({
+      top: i/numTabs * documentHeight,
+      behavior: "smooth",
+    });
   });
 }
 
@@ -20,6 +23,6 @@ function selectTab(tab_index){
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
     const documentHeight = document.body.clientHeight;
-    const currentSlide = Math.min(parseInt(scrollY / documentHeight * numTabs), numTabs-1);
+    const currentSlide = parseInt(scrollY / documentHeight * numTabs + 0.33);
     selectTab(currentSlide);
 });
