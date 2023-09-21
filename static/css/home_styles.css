@@ -1,35 +1,3 @@
-:root{
-    --background-color: #F5F8FA;
-    --primary-color: #004FFC;
-    --text-color: #000000;
-}
-
-body{
-    height: 100%;
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    font: 400 2.2vh 'Montserrat', sans-serif;
-    color: var(--text-color);
-}
-
-.slide{
-    height: 100vh;
-    padding: 0 13vw;
-}
-
-button{
-    font: 700 0.6em 'Montserrat', sans-serif;
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    padding: 2vh 0;
-    width: 20vh;
-    cursor: pointer;
-}
-
 /* HEADER */
 
 .header{
@@ -43,7 +11,7 @@ button{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4% 0 4%;
+    padding: 0 4%;
     box-sizing: border-box;
 }
 
@@ -131,12 +99,6 @@ button{
 
 }
 
-h1{
-    font: 700 12vh 'Montserrat', sans-serif;
-    line-height: 10vh;
-    margin: 0;
-}
-
 .home-text-container p {
     text-align: justify;
 }
@@ -159,4 +121,50 @@ h1{
 
 .scroll-message svg{
     width: 3vh;
+}
+
+/* PHONE */
+@media (max-width: 1024px) and (orientation: portrait) {
+    /* HEADER */
+    .header{
+        height: 10%;
+        padding: 0 8%;
+    }
+
+    .header-logo{
+        height: 6vh;
+    }
+
+    /* HOME */
+    #homeSlide{
+        height: 100vh;
+    }
+
+    .home-container{
+        flex-direction: column;
+        margin-top: 35%;
+        height: auto;
+    }
+
+    .portrait-container{
+        margin-bottom: 4vh;
+    }
+
+    .portrait-outline{
+        border-width: 0.8vh;
+    }
+
+    .home-text-container{
+        padding: 0;
+        font-size: 1em;
+    }
+
+    .home-container p{
+        margin: 4vh 0;
+    }
+
+    .scroll-message{
+        margin-top: 6vh;
+        font-size: 0.7em;
+    }
 }

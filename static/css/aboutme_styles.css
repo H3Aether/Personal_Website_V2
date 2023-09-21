@@ -8,7 +8,6 @@
 }
 
 .aboutme-columns > .column{
-    /* padding: 0 5%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -21,12 +20,6 @@
 }
 .aboutme-columns > .column:last-child{
     flex-shrink: 1;
-}
-
-h2{
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin: 0;
 }
 
 .column h2{
@@ -77,4 +70,49 @@ h2{
 .objective-line{
     width: 10vh;
     border: 0.4vh solid var(--primary-color);
+}
+
+/* PHONE */
+@media only screen and (max-width: 1024px) {
+    .aboutme-columns{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .aboutme-columns > .column:first-child{
+        width: 100%;
+        padding: 0;
+    }
+
+    .column h2{
+        text-align: center;
+    }
+
+    .world-map{
+        flex-direction: column;
+        height: auto;
+        margin: 4vh 0
+    }
+
+    .world-map > div:first-child{
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.4em;
+        border-width: 0.9vh;
+    }
+
+    .world-map > div:last-child{
+        width: 100%;
+        height: 25vh;
+    }
+
+    .objective-text{
+        font-size: 1.4em;
+    }
+
+    .objective-line{
+        width: 20%;
+        border-width: 0.3vh;
+        margin: 2.5vh auto;
+    }
 }

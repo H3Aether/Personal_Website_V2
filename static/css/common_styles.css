@@ -1,0 +1,76 @@
+:root{
+    --background-color: #F5F8FA;
+    --primary-color: #004FFC;
+    --text-color: #000000;
+}
+
+body{
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    font: 400 2.2vh 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.slide{
+    height: 100vh;
+    padding: 0 13vw;
+}
+
+button{
+    font: 700 0.6em 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 2vh 0;
+    width: 20vh;
+    cursor: pointer;
+}
+
+h1{
+    font: 700 12vh 'Montserrat', sans-serif;
+    line-height: 10vh;
+    margin: 0;
+}
+
+h2{
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+h3{
+    font-size: 1.6em;
+    text-align: center;
+    margin: 0;
+}
+
+/* PHONE */
+@media only screen and (max-width: 1024px) {
+    body{
+        font-size: 1em;
+    }
+
+    .slide{
+        padding: 0 10vw;
+        height: auto;
+    }
+
+    button{
+        font-size: 0.8em;
+        margin: auto;
+    }
+
+    h1{
+        line-height: 0.9em;
+        font-size: 3em;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 2em;
+    }
+}
