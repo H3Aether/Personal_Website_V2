@@ -1,5 +1,5 @@
 #workSlide h2{
-    margin-bottom: 2%;
+    margin-bottom: 2vh;
 }
 
 #workSlide h2:first-child{
@@ -24,6 +24,7 @@
     border-left: 1.2vh solid var(--primary-color);
     flex-shrink: 0;
     box-sizing: border-box;
+    position: relative;
 }
 
 .job h3{
@@ -47,7 +48,8 @@
 }
 
 .job p:last-child{
-    margin-top: 4vh;
+    position: absolute;
+    bottom: 0;
 }
 
 .job p > b{
@@ -91,7 +93,7 @@
     transition-duration: 333ms;
 }
 
-.project:hover .project-image{
+.project:hover .project-image, .project:focus .project-image{
     transform: scale(1.1);
 }
 
@@ -134,4 +136,71 @@
 .indicator-selected{
     background-color: var(--primary-color);
     transform: scale(1.6) translateY(0.0vh);
+}
+
+
+/* PHONE */
+@media only screen and (max-width: 1024px) {
+    #workSlide h2{
+        margin-bottom: 3vh;
+    }
+    
+    .career-carousel{
+        height: 47vh;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 100%);
+        grid-gap: 2vh;
+        grid-auto-flow: column;
+    }
+
+    .job{
+        width: 100%;
+        border-width: 0.9vh;
+        padding-left: 2vh;
+        padding-right: 0;
+    }
+
+    .job h3{
+        font-size: 1.5em;
+    }
+
+    .job p:nth-child(2){
+        font-size: 1.2em;
+    }
+
+    .projects-carousel{
+        height: 55vh;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 100%);
+        grid-auto-flow: column;
+    }
+
+    .project{
+        width: 100%;
+        padding-right: 0;
+        flex-direction: column;
+    }
+
+    .project-image-container{
+        width: 35%;
+        height: auto;
+        order: 1;
+    }
+
+    .project h3{
+        font-size: 1.2em;
+        order: 0;
+    }
+
+    .project-tags{
+        margin-left: 40%;
+        line-height: 1.6em;
+        height: 0;
+    }
+
+    .project-tag{
+        font-size: 0.6em;
+    }
 }

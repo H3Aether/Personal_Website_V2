@@ -75,6 +75,7 @@
 /* PHONE */
 @media only screen and (max-width: 1024px) {
     .aboutme-columns{
+        margin-top: 0;
         flex-direction: column;
         height: auto;
     }
@@ -82,10 +83,6 @@
     .aboutme-columns > .column:first-child{
         width: 100%;
         padding: 0;
-    }
-
-    .column h2{
-        text-align: center;
     }
 
     .world-map{
