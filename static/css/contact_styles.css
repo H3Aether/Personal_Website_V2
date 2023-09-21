@@ -48,3 +48,38 @@
     color: #a9a9a9;
     font-size: 0.8em;
 }
+
+/* PHONE */
+@media only screen and (max-width: 1024px) {
+    #contactSlide h2{
+        margin: 25% 0 5% 0;
+    }
+
+    .contact-message{
+        width: 100%;
+    }
+
+    .contact-columns{
+        margin-top: 6vh;
+        flex-direction: column;
+    }
+
+    .contact-columns .column{
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    .contact-icon{
+        height: 8vh;
+        margin: 0 auto 1.5vh auto;
+    }
+
+    .contact-columns p{
+        width: 100%;
+        margin: 1.5vh 0 2vh 0;
+    }
+
+    .contact-columns button{
+        margin: 0 auto 5vh auto;
+    }
+}
