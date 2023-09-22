@@ -6,7 +6,7 @@
     height: 13%;
     width: 100%;
     background-color: var(--background-color);
-    z-index: 99;
+    z-index: 3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,9 +51,21 @@
     color: var(--primary-color);
 }
 
+.mobile-menu-opacifier{
+    display: none;
+    transition-duration: 333ms;
+}
+
+.header-menu-mobile{
+    display: none;
+}
+
+.mobile-menu-container{
+    display: none;
+}
+
 
 /* HOME */
-
 .home-container {
 	width: 100%;
 	height: 60vh;
@@ -104,7 +116,7 @@
 }
 
 .home-text-container b {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .scroll-message{
@@ -127,12 +139,69 @@
 @media (max-width: 1024px) and (orientation: portrait) {
     /* HEADER */
     .header{
-        height: 10%;
+        height: 10vh;
         padding: 0 8%;
     }
 
     .header-logo{
         height: 6vh;
+    }
+
+    .header-menu{
+        display: none;
+    }
+
+    .header-menu-mobile{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .header-menu-mobile-icon{
+        height: 1.3vh;
+        width: 1.3vh;
+        margin-left: 1vh;
+        position: relative;
+    }
+
+    .header-menu-mobile-icon svg{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        transition-duration: 333ms;
+    }
+
+    .mobile-menu-container{
+        position: fixed;
+        width: 100%;
+        height: auto;
+        padding-bottom: 2vh;
+        border-bottom-left-radius: 3vh;
+        border-bottom-right-radius: 3vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        text-align: center;
+        background-color: var(--background-color);
+        transition-duration: 333ms;
+        transform: translateY(-100%);
+    }
+
+    .header-tab-mobile{
+        margin-bottom: 1vh;
+        cursor: pointer;
+    }
+
+    .mobile-menu-opacifier{
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
     }
 
     /* HOME */
@@ -164,7 +233,7 @@
     }
 
     .scroll-message{
-        margin-top: 6vh;
         font-size: 0.7em;
+        margin-top: 2vh;
     }
 }

@@ -52,7 +52,7 @@
 /* PHONE */
 @media only screen and (max-width: 1024px) {
     #contactSlide h2{
-        margin: 25% 0 5% 0;
+        margin: 13vh 0 5% 0;
     }
 
     .contact-message{

@@ -1,6 +1,7 @@
 :root{
     --background-color: #F5F8FA;
     --primary-color: #004FFC;
+    --secondary-color: #EDAE49;
     --text-color: #000000;
 }
 
@@ -22,7 +23,7 @@ body{
 
 button{
     font: 700 0.6em 'Montserrat', sans-serif;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     color: white;
     padding: 2vh 0;
@@ -31,7 +32,7 @@ button{
 }
 
 h1{
-    font: 700 12vh 'Montserrat', sans-serif;
+    font: 800 12vh 'Montserrat', sans-serif;
     line-height: 10vh;
     margin: 0;
 }

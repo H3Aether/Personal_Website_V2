@@ -44,7 +44,7 @@
     font-weight: 700;
     font-size: 3.2vh;
     text-align: left;
-    border-left: 1.2vh solid var(--primary-color);
+    border-left: 1.2vh solid var(--secondary-color);
     padding-left: 3%;
     height: auto !important;
 }
@@ -69,13 +69,13 @@
 
 .objective-line{
     width: 10vh;
-    border: 0.4vh solid var(--primary-color);
+    border: 0.4vh solid var(--secondary-color);
 }
 
 /* PHONE */
 @media only screen and (max-width: 1024px) {
     .aboutme-columns{
-        margin-top: 0;
+        margin-top: 13vh;
         flex-direction: column;
         height: auto;
     }

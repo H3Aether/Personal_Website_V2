@@ -21,7 +21,7 @@
     width: 40%;
     padding-right: 10vh;
     padding-left: 3vh;
-    border-left: 1.2vh solid var(--primary-color);
+    border-left: 1.2vh solid var(--secondary-color);
     flex-shrink: 0;
     box-sizing: border-box;
     position: relative;
@@ -108,7 +108,7 @@
 }
 
 .project-tag{
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     font-weight: 700;
     font-size: 1.6vh;
@@ -144,6 +144,10 @@
     #workSlide h2{
         margin-bottom: 3vh;
     }
+
+    #workSlide h2:first-child{
+        margin-top: 13vh;
+    }
     
     .career-carousel{
         height: 47vh;
@@ -170,7 +174,7 @@
     }
 
     .projects-carousel{
-        height: 55vh;
+        height: auto;
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 100%);
@@ -180,6 +184,7 @@
     .project{
         width: 100%;
         padding-right: 0;
+        padding-top: 2vh;
         flex-direction: column;
     }
 
@@ -196,7 +201,7 @@
 
     .project-tags{
         margin-left: 40%;
-        line-height: 1.6em;
+        line-height: 1.4em;
         height: 0;
     }
 
