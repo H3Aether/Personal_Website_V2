@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.header-logo svg{
+.header-logo img{
     transform: translateY(1vh);
 }
 

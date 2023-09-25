@@ -23,7 +23,7 @@ body{
 
 button{
     font: 700 0.6em 'Montserrat', sans-serif;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border: none;
     color: white;
     padding: 2vh 0;

@@ -31,6 +31,14 @@
     margin: 0;
 }
 
+.aboutme-columns p > b{
+    font-weight: 600;
+}
+
+.aboutme-columns p > br{
+    margin-bottom: 1vh;
+}
+
 .world-map{
     margin-top: 5vh;
     height: 32vh;
@@ -44,7 +52,7 @@
     font-weight: 700;
     font-size: 3.2vh;
     text-align: left;
-    border-left: 1.2vh solid var(--secondary-color);
+    border-left: 1.2vh solid var(--primary-color);
     padding-left: 3%;
     height: auto !important;
 }

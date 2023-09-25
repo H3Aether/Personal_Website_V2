@@ -21,7 +21,7 @@
     width: 40%;
     padding-right: 10vh;
     padding-left: 3vh;
-    border-left: 1.2vh solid var(--secondary-color);
+    border-left: 1.2vh solid var(--primary-color);
     flex-shrink: 0;
     box-sizing: border-box;
     position: relative;
