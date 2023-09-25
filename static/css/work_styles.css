@@ -173,6 +173,10 @@
         font-size: 1.2em;
     }
 
+    .job p:last-child{
+        font-size: 0.9em;
+    }
+
     .projects-carousel{
         height: auto;
         display: grid;
