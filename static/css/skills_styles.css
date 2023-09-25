@@ -17,6 +17,11 @@
     border-left: 1vh solid var(--primary-color);
     padding-left: 2vh;
     margin-bottom: 3vh;
+    position: relative;
+}
+
+.skills-columns h3 > svg{
+    display: none;
 }
 
 .skills-list{
@@ -34,10 +39,10 @@
 }
 
 .skill-icon{
-    width: 3vh;
-    height: 3vh;
+    width: 4vh;
+    height: 4vh;
+    transform: translateY(-0.3vh);
     margin-right: 2vh;
-    border: 3px solid black;
     flex-shrink: 0;
 }
 
@@ -71,7 +76,7 @@
 
 .additional-skills ul{
     margin-top: 1vh;
-    padding-left: 2vh;
+    padding-left: 2.5vh;
     font-size: 1.8vh;
 }
 
@@ -81,4 +86,65 @@
 
 .additional-skills b{
     font-weight: 600;
+}
+
+
+/* PHONE */
+@media only screen and (max-width: 1024px) {
+    #skillsSlide h2{
+        margin: 13vh 0 3vh 0;
+    }
+
+    .skills-columns{
+        flex-direction: column;
+    }
+
+    .skills-columns .column{
+        width: 100%;
+    }
+
+    .skills-columns h3{
+        border-width: 0.9vh;
+        cursor: pointer;
+    }
+
+    .skills-columns h3 > svg{
+        display: inline;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(20%);
+        width: 2vh;
+        transform: rotate(0deg);
+        transition-duration: 333ms;
+    }
+
+    .skills-list{
+        display: none;
+        margin-bottom: 5vh;
+    }
+
+    .column:last-child .skills-list{
+        margin-bottom: 0;
+    }
+
+    .skill{
+        padding-right: 0;
+    }
+
+    .skill-description > span{
+        font-size: 1.4em;
+    }
+
+    .skill-description p{
+        font-size: 0.8em;
+    }
+
+    .skill-tags{
+        line-height: 1.4em;
+    }
+
+    .skill-tag{
+        font-size: 0.6em;
+    }
 }
