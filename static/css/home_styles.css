@@ -136,7 +136,7 @@
 }
 
 /* PHONE */
-@media (max-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) {
     /* HEADER */
     .header{
         height: 10vh;
