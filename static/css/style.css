@@ -1,0 +1,1024 @@
+:root {
+  --color-dark: #1b1b1b;
+  --color-accent: #004ffc;
+  --color-text-gray: #7A7A91;
+  --color-text-white: #ffffff;
+  --color-light-border: #D9D9D9;
+  --color-background-white: #ffffff;
+  --color-background-light: #f8fafc;
+  --color-badge: #f1f5f9;
+
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Bricolage Grotesque', sans-serif;
+  
+  --space-between-margins: 1150px;
+  --section-padding: 80px;
+  --boxes-border-radius: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-background-white);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container{
+    max-width: var(--space-between-margins);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h1, h2{
+    font-family: var(--font-accent);
+    font-weight: 800;
+    font-size: 3.0rem;
+    line-height: 1.0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-color: var(--color-dark);
+    color: var(--color-text-white);
+    width: 230px;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+
+.btn-white {
+    background-color: var(--color-background-white);
+    color: var(--color-dark);
+}
+
+.full-width {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.avatar-icon {
+    background-image: url('static/img/PP.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    height: 40px;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    border: 2px solid var(--color-text-white);
+}
+
+
+/* ###################################
+    NAVBAR
+################################### */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-light-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--space-between-margins);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: var(--font-accent);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--color-dark);
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+.nav-links a {
+    margin-left: 32px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ###################################
+    LANDPAGE
+################################### */
+
+.landpage{
+    height: 100vh;
+}
+
+.landpage-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.landpage::before{
+    width: 90%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+
+    background-image: url('static/img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-background-white);
+
+    -webkit-mask-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.00) 0%,
+        rgba(0, 0, 0, 0.05) 20%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 1.00) 100%
+    );
+    
+    mask-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.00) 0%, 
+        rgba(0, 0, 0, 0.05) 20%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 1.00) 100%
+    );
+
+    z-index: -1;
+}
+
+.kicker {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-text-gray);
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--color-text-gray);
+}
+
+.landpage-illustration img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.08));
+}
+
+
+
+
+
+
+/* ###################################
+    PROJECTS
+################################### */
+
+.projects {
+    padding: var(--section-padding) 0;
+    border-top: 1px solid var(--color-light-border);
+    position: relative;
+}
+
+.projects-layout {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    gap: 36px;
+}
+
+.vertical-header {
+    min-width: 250px;
+    background-color: var(--color-background-white);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 80px;
+    z-index: 1;
+}
+
+.vertical-header h2 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin: 0;
+}
+
+.mask-container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    gap: 36px;
+    width: max-content;
+    will-change: transform;
+}
+
+.card {
+    border: 1px solid var(--color-light-border);
+    border-radius: var(--boxes-border-radius);
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 670px;
+    color: var(--color-text-gray);
+}
+
+.card h3{
+    font-family: var(--font-accent);
+    color: var(--color-dark);
+    font-size: 1.5rem;
+}
+
+.card-right .project-illustration{
+    margin-right: 30px;
+}
+
+.card-left .project-illustration{
+    margin-left: 30px;
+}
+
+.empty-card {
+    background-color: rgba(64, 64, 64, 0.06);
+}
+
+.project-illustration {
+    aspect-ratio: 1;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: var(--boxes-border-radius);
+}
+
+.project-details > span{
+    background: var(--color-badge);
+    color: var(--color-dark);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-details > span span{
+    margin-right: 4px;
+}
+
+
+
+
+
+/* Keyframes remain the same */
+.top-row { animation-name: move-left; }
+.bottom-row { animation-name: move-right; }
+
+@keyframes move-left {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes move-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
+}
+
+
+
+
+
+
+/* ###################################
+    PRICING
+################################### */
+
+.pricing {
+    background: radial-gradient(circle at 90% 10%, rgba(241, 245, 249, 0.8), transparent 50%),
+                linear-gradient(180deg, var(--color-background-white) 0%, var(--color-background-light) 100%);
+    padding: var(--section-padding) 0;
+    border-top: 1px solid var(--color-light-border);
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2{
+    margin: 0;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    margin-top: 4px;
+    color: var(--color-text-gray);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid var(--color-light-border);
+    border-radius: var(--boxes-border-radius);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; 
+}
+
+.pricing-card.highlighted {
+    border: 2.5px solid var(--color-accent);
+    box-shadow: 0 20px 25px -5px rgba(0, 102, 255, 0.08);
+}
+
+.pricing-card.dark {
+    background: var(--color-dark);
+    color: var(--color-text-white);
+    border: none;
+}
+
+.card-header h3 {
+    font-family: var(--font-accent);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    font-size: 1.0rem;
+    color: var(--color-text-gray);
+    min-height: 48px;
+}
+
+.pricing-card.dark .subtitle {
+    color: var(--color-light-border);
+}
+
+.price {
+    font-family: var(--font-accent);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 12px 0;
+    letter-spacing: -1px;
+}
+
+.price small {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-light-border);
+}
+
+.features {
+    list-style: none;
+    border-top: 1px solid var(--color-light-border);
+    padding-top: 24px;
+    padding-left: 0;
+    margin-bottom: 32px;
+}
+
+.pricing-card.dark .features {
+    border-top-color: #27272a;
+}
+
+.features li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pricing-card.dark .features li {
+    color: #e4e4e7;
+}
+
+.dot-blue { color: var(--color-accent); font-weight: bold;}
+
+.card-action{
+    box-sizing: border-box;
+}
+
+.footnote {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+
+
+
+
+
+
+
+/* ###################################
+    CONTACT
+################################### */
+
+.contact {
+    padding: var(--section-padding) 0;
+    border-top: 1px solid var(--color-light-border);
+    position: relative;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    gap: 20px;
+    align-items: start;
+    height: 710px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.contact-info > div {
+    display: inherit;
+    gap: 20px;
+}
+
+.contact-info h2 {
+    margin: 0;
+}
+
+.contact-box {
+    background: #ffffff;
+    border: 1px solid var(--color-light-border);
+    border-radius: var(--boxes-border-radius);
+    padding: 28px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reach-text {
+    font-size: 0.85rem;
+    color: var(--color-text-gray);
+    margin: 10px;
+}
+
+.reach-text b{
+    color: var(--color-dark);
+    font-family: var(--font-accent);
+}
+
+.contact-links {
+    gap: 12px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    text-decoration: underline;
+}
+
+.contact-links a:hover {
+    color: var(--primary-blue);
+}
+
+.text-icon{
+    height: 0.95rem;
+    aspect-ratio: 1;
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    transform: translateY(-2px);
+}
+
+.linkedin-icon{
+    background-image: url(static/img/linkedin.svg);
+    background-position: center;
+    background-size: contain;
+    margin-right: 13px;
+    transform: translateX(2px);
+}
+
+/* Scheduler Container */
+.scheduler-wrapper {
+    background: #ffffff;
+    border: 1px solid var(--color-light-border);
+    border-radius: var(--boxes-border-radius);
+    padding: 24px;
+    height: 100%;
+    /* width: 500px; */
+    min-height: 0;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+}
+
+.website-footer{
+    height: 170px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.website-footer::before{
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+
+    background-image: url('static/img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-background-white);
+
+    -webkit-mask-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.00) 0%,
+        rgba(0, 0, 0, 0.05) 20%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 1.00) 100%
+    );
+    
+    mask-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.00) 0%, 
+        rgba(0, 0, 0, 0.05) 20%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 1.00) 100%
+    );
+
+    z-index: -1;
+}
+
+/* ###################################
+    RESPONSIVE — TABLET & MOBILE
+    Breakpoints: <=1024px (tablet), <=768px (mobile nav), <=480px (small phones)
+################################### */
+
+/* -----------------------------------
+   TABLET — 1024px and below
+------------------------------------ */
+@media (max-width: 1024px) {
+
+    :root {
+        --section-padding: 56px;
+    }
+
+    h1, h2 {
+        font-size: 2.4rem;
+    }
+
+    /* ---- Navbar ---- */
+    .nav-container {
+        padding: 14px 24px;
+    }
+
+    /* ---- Landpage / Hero ---- */
+    .landpage {
+        height: auto;
+        min-height: 100vh;
+        padding: 240px 0 60px;
+        box-sizing: border-box;
+    }
+
+    .landpage-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        height: auto;
+    }
+
+    .landpage-content {
+        text-align: center;
+    }
+
+    .landpage-illustration img {
+        max-width: 380px;
+    }
+
+    /* Keep the background photo, just soften it a touch since the hero
+       content is now centered on top of it instead of sitting beside it. */
+    .landpage::before {
+        opacity: 0.7;
+        bottom: 0;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom right,
+                rgba(0, 0, 0, 0.00) 0%,
+                rgba(0, 0, 0, 0.05) 20%,
+                rgba(0, 0, 0, 0.15) 50%,
+                rgba(0, 0, 0, 1.00) 100%);
+    
+        mask-image: linear-gradient(to bottom right,
+                rgba(0, 0, 0, 0.00) 0%,
+                rgba(0, 0, 0, 0.05) 20%,
+                rgba(0, 0, 0, 0.15) 50%,
+                rgba(0, 0, 0, 1.00) 100%);
+    }
+
+    /* ---- Projects ----
+       The horizontal scroll-jacking "infinite row" effect (see matchMedia
+       in the page script) is desktop-only. Below 1024px the cards simply
+       flow as a normal, readable stacked list. */
+    .projects-layout {
+        flex-direction: column;
+        height: auto;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .vertical-header {
+        min-width: auto;
+        width: 100%;
+        justify-content: flex-start;
+        padding-right: 0;
+    }
+
+    .vertical-header h2 {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .mask-container {
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        transform: none !important;
+    }
+
+    /* Spacer cards existed only to feed the infinite horizontal loop */
+    .empty-card {
+        display: none;
+    }
+
+    /* card-left / card-right only exist to alternate which side the image
+       sits on for the desktop horizontal animation. Once the layout is a
+       plain vertical stack, that distinction is meaningless — every card
+       should read in the same order: image, then details. */
+    .card {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    .card .project-illustration {
+        order: 1;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .card .project-details {
+        order: 2;
+    }
+
+    /* ---- Pricing ---- */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* ---- Contact ---- */
+    .contact{
+        padding: var(--section-padding) 0 0 0;
+    }
+
+    .contact-grid {
+        grid-template-rows: auto auto;
+        height: auto;
+        gap: 32px;
+        box-sizing: border-box;
+    }
+
+    .contact h2 > br{
+        display: none;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        height: auto;
+        gap: 32px;
+    }
+
+    .contact-info > div {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .contact-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .scheduler-wrapper {
+        height: auto;
+    }
+
+    /* Decorative footer photo: let it sit in normal flow instead of
+       being absolutely pinned to the bottom of a now-fluid section */
+    .website-footer {
+        position: relative;
+        height: 120px;
+    }
+}
+
+/* -----------------------------------
+   MOBILE — 768px and below
+------------------------------------ */
+@media (max-width: 768px) {
+
+    .btn {
+        width: 100%;
+        max-width: none;
+        padding: 14px 20px;
+        box-sizing: border-box;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(78vw, 320px);
+        background: var(--color-background-white);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 4px;
+        padding: 110px 32px 32px;
+        box-sizing: border-box;
+        box-shadow: -12px 0 30px rgba(0, 0, 0, 0.08);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.05rem;
+        border-bottom: 1px solid var(--color-light-border);
+    }
+
+    /* Lock background scroll while the mobile menu is open */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1.05rem;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* -----------------------------------
+   SMALL PHONES — 480px and below
+------------------------------------ */
+@media (max-width: 480px) {
+
+    :root {
+        --section-padding: 40px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .landpage-illustration img {
+        max-width: 280px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .pricing-card {
+        padding: 28px 24px;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .contact-box {
+        padding: 22px;
+    }
+}
+
+/* -----------------------------------
+   LANDSCAPE PHONES / SHORT WIDE VIEWPORTS
+   At >=1025px wide the horizontal scroll animation still runs (see the
+   gsap.matchMedia breakpoint in the page script), which is fine — but a
+   landscape phone/small tablet has far less viewport height than a
+   desktop, so the two 300px-tall card rows no longer fit and spill past
+   the pinned section. Shrink everything to match the available height
+   and clip any residual overflow.
+------------------------------------ */
+@media (min-width: 1025px) and (orientation: landscape) and (max-height: 650px) {
+
+    .projects {
+        overflow: hidden;
+    }
+
+    .vertical-header {
+        min-width: 140px;
+        padding-right: 24px;
+    }
+
+    .mask-container {
+        gap: 14px;
+    }
+
+    .row {
+        gap: 14px;
+    }
+
+    .card {
+        width: 400px;
+        height: 170px;
+        padding: 18px;
+        gap: 16px;
+    }
+
+    .card-right .project-illustration {
+        margin-right: 10px;
+    }
+
+    .card-left .project-illustration {
+        margin-left: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.05rem;
+        margin: 4px 0;
+    }
+
+    .card ul {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+    .card ul li {
+        font-size: 0.78rem;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+
+    .project-details > span {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .pricing-card h3{
+        margin-top: 0;
+    }
+
+    .price {
+        margin: 0;
+    }
+}
+
+/* Respect reduced-motion preferences for decorative CSS transitions */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
