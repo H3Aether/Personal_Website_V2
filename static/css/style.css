@@ -82,7 +82,7 @@ h1, h2{
 }
 
 .avatar-icon {
-    background-image: url('static/img/PP.jpg');
+    background-image: url('../img/PP.jpg');
     background-size: cover;
     border-radius: 50%;
     height: 40px;
@@ -198,7 +198,7 @@ h1, h2{
     position: absolute;
     right: 0;
 
-    background-image: url('static/img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
+    background-image: url('../img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-color: var(--color-background-white);
@@ -588,7 +588,7 @@ h1, h2{
 }
 
 .linkedin-icon{
-    background-image: url(static/img/linkedin.svg);
+    background-image: url('../img/linkedin.svg');
     background-position: center;
     background-size: contain;
     margin-right: 13px;
@@ -624,7 +624,7 @@ h1, h2{
     position: absolute;
     right: 0;
 
-    background-image: url('static/img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
+    background-image: url('../img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-color: var(--color-background-white);
