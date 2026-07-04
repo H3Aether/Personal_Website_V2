@@ -298,6 +298,8 @@ h1, h2{
     padding: var(--section-padding) 0;
     border-top: 1px solid var(--color-light-border);
     position: relative;
+    overflow: hidden;
+    contain: content;
 }
 
 .projects-layout {
@@ -331,6 +333,8 @@ h1, h2{
     flex-direction: column;
     gap: 36px;
     justify-content: center;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
 }
 
 .row {
@@ -374,6 +378,7 @@ h1, h2{
     height: 100%;
     box-sizing: border-box;
     border-radius: var(--boxes-border-radius);
+    object-fit: cover;
 }
 
 .project-details > span{
@@ -397,8 +402,9 @@ h1, h2{
    breakpoint (see the ≤1024px media query below); hidden on desktop where
    the horizontal scroll animation is used instead. */
 .carousel-dots {
-    display: none;
-    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .carousel-dot {
@@ -418,6 +424,48 @@ h1, h2{
 }
 
 .carousel-dot:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Wraps the prev arrow / dots / next arrow as one row. Same visibility
+   rule as .carousel-dots: hidden on desktop, shown in the ≤1024px block. */
+.carousel-controls {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.carousel-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: none;
+    border-radius: 50%;
+    border: 1px solid var(--color-light-border);
+    background: var(--color-background-white);
+    color: var(--color-dark);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--color-badge);
+    border-color: var(--color-text-gray);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.carousel-arrow:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
@@ -799,6 +847,7 @@ h1, h2{
         gap: 24px;
         width: 100%;
         box-sizing: border-box;
+        padding: 0 24px;
     }
 
     .vertical-header {
@@ -835,6 +884,13 @@ h1, h2{
         scroll-padding-inline: 24px;
         scrollbar-width: none;
         justify-content: start;
+        cursor: grab;
+        overscroll-behavior-x: contain;
+    }
+
+    .mask-container.dragging {
+        cursor: grabbing;
+        scroll-snap-type: none;
     }
 
     .mask-container::-webkit-scrollbar {
@@ -874,12 +930,9 @@ h1, h2{
         order: 2;
     }
 
-    /* Dot indicators (populated/managed by the small script at the
-       bottom of the page) — hidden by default, shown at this breakpoint */
-    .carousel-dots {
+    /* Carousel controls (arrows + dots) — hidden by default, shown at this breakpoint */
+    .carousel-controls {
         display: flex;
-        justify-content: center;
-        gap: 8px;
     }
 
     /* ---- Pricing ---- */

@@ -71,7 +71,7 @@
                 <div class="row top-row">
                     <div class="card empty-card"></div>
                     <div class="card card-right">
-                        <img src="static/img/PIC.jpg" class="project-illustration">
+                        <img src="static/img/projects/1.jpg" class="project-illustration">
                         <div class="project-details">
                             <span data-i18n="proj_growth"></span>
                             <h3 data-i18n="card1_title"></h3>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="card card-right">
-                        <img src="static/img/PIC.jpg" class="project-illustration">
+                        <img src="static/img/projects/2.jpg" class="project-illustration">
                         <div class="project-details">
                             <span data-i18n="proj_quality"></span>
                             <h3 data-i18n="card2_title"></h3>
@@ -105,7 +105,7 @@
                                 <li data-i18n="card3_bullet2"></li>
                             </ul>
                         </div>
-                        <img src="static/img/PIC.jpg" class="project-illustration">
+                        <img src="static/img/projects/3.jpg" class="project-illustration">
                     </div>
                     <div class="card card-left">
                         <div class="project-details">
@@ -116,13 +116,17 @@
                                 <li data-i18n="card4_bullet2"></li>
                             </ul>
                         </div>
-                        <img src="static/img/PIC.jpg" class="project-illustration">
+                        <img src="static/img/projects/4.jpg" class="project-illustration">
                     </div>
                     <div class="card empty-card"></div>
                 </div>
             </div>
 
-            <div class="carousel-dots" id="projectDots" aria-hidden="true"></div>
+            <div class="carousel-controls">
+                <button type="button" class="carousel-arrow carousel-prev" id="projectPrev" aria-label="Previous project">‹</button>
+                <div class="carousel-dots" id="projectDots" aria-hidden="true"></div>
+                <button type="button" class="carousel-arrow carousel-next" id="projectNext" aria-label="Next project">›</button>
+            </div>
         </div>
     </section>
 
@@ -281,7 +285,7 @@
         });
     </script>
 
-    <script>
+<script>
         // Mobile hamburger menu toggle
         const navToggle = document.getElementById('navToggle');
         const navLinksPanel = document.getElementById('navLinks');
@@ -327,13 +331,12 @@
     </script>
 
     <script>
-        // Mobile/tablet projects carousel — dot indicators.
-        // The swipe/scroll itself is plain CSS scroll-snap; this just
-        // keeps a row of dots in sync with whichever card is centered,
-        // and lets tapping a dot jump to that card.
+        // Mobile/tablet/narrow-desktop projects carousel.
         (function () {
             const track = document.querySelector('.projects .mask-container');
             const dotsWrap = document.getElementById('projectDots');
+            const prevBtn = document.getElementById('projectPrev');
+            const nextBtn = document.getElementById('projectNext');
             if (!track || !dotsWrap) return;
 
             const cards = Array.from(track.querySelectorAll('.card:not(.empty-card)'));
@@ -351,23 +354,111 @@
             });
 
             const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+            let activeIndex = 0;
 
             function setActiveDot(index) {
+                activeIndex = index;
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                if (prevBtn) prevBtn.disabled = index <= 0;
+                if (nextBtn) nextBtn.disabled = index >= cards.length - 1;
             }
 
             setActiveDot(0);
 
+            // --- Updated IntersectionObserver Logic ---
+            const cardRatios = new Map();
+
             const observer = new IntersectionObserver((entries) => {
+                // Update the tracked visibility ratio for any card that moved
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-                        const index = cards.indexOf(entry.target);
-                        if (index !== -1) setActiveDot(index);
-                    }
+                    cardRatios.set(entry.target, entry.intersectionRatio);
                 });
-            }, { root: track, threshold: [0.6] });
+
+                // 1. Scan left-to-right to find the FIRST card showing at least 60%
+                let targetIndex = cards.findIndex(card => (cardRatios.get(card) || 0) >= 0.6);
+
+                // 2. Fallback: If no card is at 60% (e.g., resting exactly between two cards), 
+                // find the one with the highest current visibility.
+                if (targetIndex === -1) {
+                    let maxRatio = 0;
+                    cards.forEach((card, i) => {
+                        const ratio = cardRatios.get(card) || 0;
+                        if (ratio > maxRatio) {
+                            maxRatio = ratio;
+                            targetIndex = i;
+                        }
+                    });
+                }
+
+                // Apply the active state if it has changed
+                if (targetIndex !== -1 && targetIndex !== activeIndex) {
+                    setActiveDot(targetIndex);
+                }
+            }, { 
+                root: track, 
+                // Granular thresholds guarantee the map always has an accurate % for every card
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
+            });
 
             cards.forEach((card) => observer.observe(card));
+            // -------------------------------------------
+
+            // ---- Prev / next arrows ----
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const target = cards[Math.max(0, activeIndex - 1)];
+                    target.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    const nextIndex = Math.min(cards.length - 1, activeIndex + 1);
+                    const target = cards[nextIndex];
+                    const scrollLeft = target.offsetLeft - track.offsetLeft;
+                    track.scrollTo({ 
+                        left: scrollLeft, 
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+
+            // ---- Click-and-drag scrolling for mouse users ----
+            let isDragging = false;
+            let dragStartX = 0;
+            let dragStartScrollLeft = 0;
+            let moved = false;
+
+            track.addEventListener('pointerdown', (e) => {
+                if (e.pointerType === 'touch') return; 
+                isDragging = true;
+                moved = false;
+                dragStartX = e.clientX;
+                dragStartScrollLeft = track.scrollLeft;
+                track.classList.add('dragging');
+            });
+
+            window.addEventListener('pointermove', (e) => {
+                if (!isDragging) return;
+                const dx = e.clientX - dragStartX;
+                if (Math.abs(dx) > 3) moved = true;
+                track.scrollLeft = dragStartScrollLeft - dx;
+            });
+
+            function endDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                track.classList.remove('dragging');
+            }
+            window.addEventListener('pointerup', endDrag);
+            window.addEventListener('pointercancel', endDrag);
+
+            track.addEventListener('click', (e) => {
+                if (moved) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    moved = false;
+                }
+            }, true);
         })();
     </script>
 
