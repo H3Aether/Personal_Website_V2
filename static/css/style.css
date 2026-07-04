@@ -126,6 +126,47 @@ h1, h2{
     font-style: italic;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--color-light-border);
+    border-radius: 50px;
+    padding: 6px 12px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-toggle:hover {
+    background-color: var(--color-badge);
+    border-color: var(--color-text-gray);
+}
+
+.lang-toggle img {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    object-fit: cover;
+    display: block;
+}
+
+.lang-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 .nav-links a {
     margin-left: 32px;
     font-size: 0.95rem;
@@ -179,6 +220,7 @@ h1, h2{
 
 .landpage{
     height: 100vh;
+    position: relative;
 }
 
 .landpage-grid {
@@ -345,6 +387,39 @@ h1, h2{
 
 .project-details > span span{
     margin-right: 4px;
+}
+
+.project-details li{
+    margin-bottom: 10px;
+}
+
+/* Carousel dot indicators — only relevant/visible in the mobile-carousel
+   breakpoint (see the ≤1024px media query below); hidden on desktop where
+   the horizontal scroll animation is used instead. */
+.carousel-dots {
+    display: none;
+    margin-top: 4px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-light-border);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot.active {
+    background: var(--color-accent);
+    transform: scale(1.25);
+}
+
+.carousel-dot:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 
@@ -675,7 +750,7 @@ h1, h2{
     .landpage {
         height: auto;
         min-height: 100vh;
-        padding: 240px 0 60px;
+        padding: 100px 0 60px;
         box-sizing: border-box;
     }
 
@@ -714,8 +789,10 @@ h1, h2{
 
     /* ---- Projects ----
        The horizontal scroll-jacking "infinite row" effect (see matchMedia
-       in the page script) is desktop-only. Below 1024px the cards simply
-       flow as a normal, readable stacked list. */
+       in the page script) is desktop-only. Below 1024px the two rows are
+       flattened into a single swipeable carousel (native scroll-snap, no
+       JS needed for the swipe itself) so the user doesn't have to scroll
+       past every project to reach the bottom of the page. */
     .projects-layout {
         flex-direction: column;
         height: auto;
@@ -729,6 +806,7 @@ h1, h2{
         width: 100%;
         justify-content: flex-start;
         padding-right: 0;
+        padding-left: 24px;
     }
 
     .vertical-header h2 {
@@ -736,16 +814,31 @@ h1, h2{
         transform: none;
     }
 
-    .mask-container {
-        gap: 20px;
-        justify-content: flex-start;
+    /* Flatten .row.top-row / .row.bottom-row: their cards become direct
+       flex children of .mask-container, which becomes the carousel track. */
+    .row {
+        display: contents;
     }
 
-    .row {
-        flex-direction: column;
-        width: 100%;
-        gap: 20px;
-        transform: none !important;
+    .mask-container {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        /* Bleed edge-to-edge past the .container's side padding, then add
+           our own inset so the peeking next card reaches near the screen edge. */
+        margin-inline: -24px;
+        padding: 4px 24px 14px;
+        scroll-padding-inline: 24px;
+        scrollbar-width: none;
+        justify-content: start;
+    }
+
+    .mask-container::-webkit-scrollbar {
+        display: none;
     }
 
     /* Spacer cards existed only to feed the infinite horizontal loop */
@@ -754,16 +847,18 @@ h1, h2{
     }
 
     /* card-left / card-right only exist to alternate which side the image
-       sits on for the desktop horizontal animation. Once the layout is a
-       plain vertical stack, that distinction is meaningless — every card
-       should read in the same order: image, then details. */
+       sits on for the desktop horizontal animation. In the carousel that
+       distinction is meaningless — every card should read in the same
+       order: image, then details. */
     .card {
-        width: 100%;
+        flex: 0 0 auto;
+        width: min(82%, 340px);
         height: auto;
         flex-direction: column;
         gap: 20px;
         padding: 24px;
         box-sizing: border-box;
+        scroll-snap-align: start;
     }
 
     .card .project-illustration {
@@ -777,6 +872,14 @@ h1, h2{
 
     .card .project-details {
         order: 2;
+    }
+
+    /* Dot indicators (populated/managed by the small script at the
+       bottom of the page) — hidden by default, shown at this breakpoint */
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
     }
 
     /* ---- Pricing ---- */
@@ -912,8 +1015,26 @@ h1, h2{
         padding: 0 16px;
     }
 
+    .mask-container {
+        margin-inline: -16px;
+        padding: 4px 16px 14px;
+        scroll-padding-inline: 16px;
+    }
+
     .brand {
         font-size: 1rem;
+    }
+
+    .nav-right {
+        gap: 12px;
+    }
+
+    .lang-toggle {
+        padding: 6px 8px;
+    }
+
+    .lang-toggle #langLabel {
+        display: none;
     }
 
     .description {

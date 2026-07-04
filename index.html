@@ -17,16 +17,22 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="brand">Alexis Boussaroque</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#projects">Projects</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Work together</a>
-            </nav>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language to English">
+                    <img src="static/img/fr.svg" alt="" id="langFlag" width="18" height="18">
+                    <span id="langLabel">EN</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-links" id="navLinks">
+                    <a href="#projects" data-i18n="nav_projects">Projects</a>
+                    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+                    <a href="#contact" data-i18n="nav_contact">Work together</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -34,15 +40,15 @@
     <section class="landpage">
         <div class="container landpage-grid">
             <div class="landpage-content">
-                <span class="kicker">EFFICIENCY, AUTOMATED.</span>
-                <h1>Cut the operational chaos.<br>Maximize your margins.</h1>
-                <p class="description">
+                <span class="kicker" data-i18n="kicker">EFFICIENCY, AUTOMATED.</span>
+                <h1 data-i18n="hero_h1">Cut the operational chaos.<br>Maximize your margins.</h1>
+                <p class="description" data-i18n="hero_desc">
                     From physical shop floor bottlenecks to repetitive office paperwork, I eliminate the waste holding your business back.
                 </p>
                 <div class="cta-wrapper">
                     <a href="#contact" class="btn">
                         <span class="avatar-icon"></span>
-                        Book a FREE call
+                        <span data-i18n="btn_book">Book a FREE call</span>
                         <span class="arrow">➔</span>
                     </a>
                 </div>
@@ -58,7 +64,7 @@
     <section id="projects" class="projects">
         <div class="container projects-layout">
             <div class="vertical-header">
-                <h2>Projects</h2>
+                <h2 data-i18n="projects_heading">Projects</h2>
             </div>
             <div class="mask-container">
                 <div class="row top-row">
@@ -66,22 +72,22 @@
                     <div class="card card-right">
                         <img src="static/img/PIC.jpg" class="project-illustration">
                         <div class="project-details">
-                            <span><span>📈</span>Growth</span>
-                            <h3>From crafts to Industrial</h3>
+                            <span data-i18n="proj_growth"></span>
+                            <h3 data-i18n="card1_title"></h3>
                             <ul>
-                                <li>Supported company growth by defining clean production processes.</li>
-                                <li>Created an ERP-like software to track production.</li>
+                                <li data-i18n="card1_bullet1"></li>
+                                <li data-i18n="card1_bullet2"></li>
                             </ul>
                         </div>
                     </div>
                     <div class="card card-right">
                         <img src="static/img/PIC.jpg" class="project-illustration">
                         <div class="project-details">
-                            <span><span>💎</span>Quality</span>
-                            <h3>From crafts to Industrial</h3>
+                            <span data-i18n="proj_quality"></span>
+                            <h3 data-i18n="card2_title"></h3>
                             <ul>
-                                <li>Supported company growth by defining clean production processes.</li>
-                                <li>Created an ERP-like software to track production.</li>
+                                <li data-i18n="card2_bullet1"></li>
+                                <li data-i18n="card2_bullet2"></li>
                             </ul>
                         </div>
                     </div>
@@ -91,22 +97,22 @@
                     <div class="card empty-card"></div>
                     <div class="card card-left">
                         <div class="project-details">
-                            <span><span>📦</span>Supply Chain</span>
-                            <h3>From crafts to Industrial</h3>
+                            <span data-i18n="proj_supply"></span>
+                            <h3 data-i18n="card3_title"></h3>
                             <ul>
-                                <li>Supported company growth by defining clean production processes.</li>
-                                <li>Created an ERP-like software to track production.</li>
+                                <li data-i18n="card3_bullet1"></li>
+                                <li data-i18n="card3_bullet2"></li>
                             </ul>
                         </div>
                         <img src="static/img/PIC.jpg" class="project-illustration">
                     </div>
                     <div class="card card-left">
                         <div class="project-details">
-                            <span><span>⚡</span>Efficiency</span>
-                            <h3>From crafts to Industrial</h3>
+                            <span data-i18n="proj_efficiency"></span>
+                            <h3 data-i18n="card4_title"></h3>
                             <ul>
-                                <li>Supported company growth by defining clean production processes.</li>
-                                <li>Created an ERP-like software to track production.</li>
+                                <li data-i18n="card4_bullet1"></li>
+                                <li data-i18n="card4_bullet2"></li>
                             </ul>
                         </div>
                         <img src="static/img/PIC.jpg" class="project-illustration">
@@ -114,7 +120,8 @@
                     <div class="card empty-card"></div>
                 </div>
             </div>
-    
+
+            <div class="carousel-dots" id="projectDots" aria-hidden="true"></div>
         </div>
     </section>
 
@@ -122,25 +129,25 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Pricing</h2>
-                <p>Because your business is unique, I offer flexible plans.</p>
+                <h2 data-i18n="pricing_heading">Pricing</h2>
+                <p data-i18n="pricing_subtitle">Because your business is unique, I offer flexible plans.</p>
             </div>
 
             <div class="pricing-grid">
                 <!-- Tier 1 -->
                 <div class="pricing-card">
                     <div class="card-header">
-                        <h3>Video Call</h3>
-                        <p class="subtitle">A quick session to discuss your biggest operational headache and see if I can bring a good fix.</p>
+                        <h3 data-i18n="tier1_title">Video Call</h3>
+                        <p class="subtitle" data-i18n="tier1_subtitle">A quick session to discuss your biggest operational headache and see if I can bring a good fix.</p>
                     </div>
                     <div class="price">0€</div>
                     <ul class="features">
-                        <li><span>•</span> 30 minutes call</li>
-                        <li><span>•</span> High-level bottleneck identification</li>
+                        <li><span>•</span> <span data-i18n="tier1_feat1">30 minutes call</span></li>
+                        <li><span>•</span> <span data-i18n="tier1_feat2">High-level bottleneck identification</span></li>
                     </ul>
                     <div class="card-action">
                         <a href="#contact" class="btn btn-dark full-width">
-                            <span class="avatar-icon"></span> Book a FREE call <span class="arrow">➔</span>
+                            <span class="avatar-icon"></span> <span data-i18n="btn_book">Book a FREE call</span> <span class="arrow">➔</span>
                         </a>
                     </div>
                 </div>
@@ -148,17 +155,17 @@
                 <!-- Tier 2 (Highlighted) -->
                 <div class="pricing-card highlighted">
                     <div class="card-header">
-                        <h3>Audit & Report</h3>
-                        <p class="subtitle">An investigation of your physical workflows and software tools to eliminate your business's top bottlenecks.</p>
+                        <h3 data-i18n="tier2_title">Audit & Report</h3>
+                        <p class="subtitle" data-i18n="tier2_subtitle">An investigation of your physical workflows and software tools to eliminate your business's top bottlenecks.</p>
                     </div>
                     <div class="price">250 - 500€*</div>
                     <ul class="features">
-                        <li><span class="dot-blue">•</span> On-site shop floor walkthrough</li>
-                        <li><span class="dot-blue">•</span> Digital workflow assessment</li>
-                        <li><span class="dot-blue">•</span> Comprehensive PDF report</li>
-                        <li><span class="dot-blue">•</span> A step-by-step proposition plan</li>
+                        <li><span class="dot-blue">•</span> <span data-i18n="tier2_feat1">On-site shop floor walkthrough</span></li>
+                        <li><span class="dot-blue">•</span> <span data-i18n="tier2_feat2">Digital workflow assessment</span></li>
+                        <li><span class="dot-blue">•</span> <span data-i18n="tier2_feat3">Comprehensive PDF report</span></li>
+                        <li><span class="dot-blue">•</span> <span data-i18n="tier2_feat4">A step-by-step proposition plan</span></li>
                     </ul>
-                    <div class="footnote">
+                    <div class="footnote" data-i18n="tier2_footnote">
                         *Depending on audit length and travel expenses
                     </div>
                 </div>
@@ -166,15 +173,15 @@
                 <!-- Tier 3 (Dark Premium) -->
                 <div class="pricing-card dark">
                     <div class="card-header">
-                        <h3>Lean Partnership</h3>
-                        <p class="subtitle">On-demand engineering expertise to actively cut waste and lock in your margins.</p>
+                        <h3 data-i18n="tier3_title">Lean Partnership</h3>
+                        <p class="subtitle" data-i18n="tier3_subtitle">On-demand engineering expertise to actively cut waste and lock in your margins.</p>
                     </div>
-                    <div class="price">60€ <small>/ hour</small></div>
+                    <div class="price">60€ <small data-i18n="price_per_hour">/ hour</small></div>
                     <ul class="features">
-                        <li><span>•</span> Custom software engineering</li>
-                        <li><span>•</span> Continuous process optimization</li>
-                        <li><span>•</span> Hands-on team training</li>
-                        <li><span>•</span> On-call engineering support</li>
+                        <li><span>•</span> <span data-i18n="tier3_feat1">Custom software engineering</span></li>
+                        <li><span>•</span> <span data-i18n="tier3_feat2">Continuous process optimization</span></li>
+                        <li><span>•</span> <span data-i18n="tier3_feat3">Hands-on team training</span></li>
+                        <li><span>•</span> <span data-i18n="tier3_feat4">On-call engineering support</span></li>
                     </ul>
                     <div class="card-action"></div>
                 </div>
@@ -186,17 +193,17 @@
     <section id="contact" class="contact">
         <div class="container contact-grid">
             <div class="contact-info">
-                <h2>Let's work <br>together</h2>
+                <h2 data-i18n="contact_heading">Let's work <br>together</h2>
                 <div>
                     <div class="contact-box">
-                        <p class="reach-text">On-site regional travel in Benelux, near <b>Luik (Belgium)</b></p>
-                        <p class="reach-text"><b>Worldwide</b> remote execution</p>
+                        <p class="reach-text" data-i18n="reach_travel">On-site regional travel in Benelux, near <b>Luik (Belgium)</b></p>
+                        <p class="reach-text" data-i18n="reach_remote"><b>Worldwide</b> remote execution</p>
                     </div>
 
                     <div class="contact-box contact-links">
                         <a href="mailto:alexis.boussaroque@gmail.com"><span class="text-icon">📧</span>alexis.boussaroque@gmail.com</a>
                         <a href="tel:+32 479 85 50 17"><span class="text-icon">📞</span>+32 479 85 50 17</a>
-                        <a href="https://www.linkedin.com/in/alexis-boussaroque-a80697221/" target="_blank"><span class="text-icon linkedin-icon"></span>LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/alexis-boussaroque-a80697221/" target="_blank"><span class="text-icon linkedin-icon"></span><span data-i18n="linkedin_label">LinkedIn Profile</span></a>
                     </div>
                 </div>
             </div>
@@ -226,10 +233,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollToPlugin.min.js"></script>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        gsap.registerPlugin(ScrollTrigger);
 
         // The horizontal scroll-jacking "infinite row" effect only makes sense
         // on wide viewports. gsap.matchMedia() automatically creates/tears down
@@ -271,25 +277,6 @@
             return () => {
                 gsap.set([".top-row", ".bottom-row"], { clearProps: "transform" });
             };
-        });
-
-        // Select all links in your navbar
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                // 1. Stop the default immediate jump
-                e.preventDefault();
-                
-                // 2. Get the target section (e.g., "#pricing")
-                const targetID = this.getAttribute('href');
-                
-                // 3. Tell GSAP to smoothly scroll there
-                gsap.to(window, {
-                    duration: 0.8,           // How long the scroll takes (in seconds)
-                    scrollTo: targetID,    // Where to scroll to
-                });
-            });
         });
     </script>
 
@@ -339,6 +326,51 @@
     </script>
 
     <script>
+        // Mobile/tablet projects carousel — dot indicators.
+        // The swipe/scroll itself is plain CSS scroll-snap; this just
+        // keeps a row of dots in sync with whichever card is centered,
+        // and lets tapping a dot jump to that card.
+        (function () {
+            const track = document.querySelector('.projects .mask-container');
+            const dotsWrap = document.getElementById('projectDots');
+            if (!track || !dotsWrap) return;
+
+            const cards = Array.from(track.querySelectorAll('.card:not(.empty-card)'));
+            if (!cards.length) return;
+
+            cards.forEach((card, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot';
+                dot.setAttribute('aria-label', `Go to project ${i + 1} of ${cards.length}`);
+                dot.addEventListener('click', () => {
+                    card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                });
+                dotsWrap.appendChild(dot);
+            });
+
+            const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+            function setActiveDot(index) {
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            }
+
+            setActiveDot(0);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                        const index = cards.indexOf(entry.target);
+                        if (index !== -1) setActiveDot(index);
+                    }
+                });
+            }, { root: track, threshold: [0.6] });
+
+            cards.forEach((card) => observer.observe(card));
+        })();
+    </script>
+
+    <script>
         const cards = document.querySelectorAll('.pricing-card');
 
         cards.forEach(card => {
@@ -373,6 +405,149 @@
             card.addEventListener('mouseenter', () => {
                 card.style.transition = 'transform 0.1s ease';
             });
+        });
+    </script>
+
+    <script>
+        // ---- Language switcher (FR / EN) ----
+        const translations = {
+            en: {
+                nav_projects: "Projects",
+                nav_pricing: "Pricing",
+                nav_contact: "Work together",
+                kicker: "EFFICIENCY, AUTOMATED.",
+                hero_h1: "Cut the operational chaos.<br>Maximize your margins.",
+                hero_desc: "From physical shop floor bottlenecks to repetitive office paperwork, I eliminate the waste holding your business back.",
+                btn_book: "Book a FREE call",
+                projects_heading: "Projects",
+                proj_growth: "<span>📈</span>Growth",
+                proj_quality: "<span>💎</span>Quality",
+                proj_supply: "<span>📦</span>Supply Chain",
+                proj_efficiency: "<span>⚡</span>Efficiency",
+                card1_title: "From crafts to Industrial",
+                card1_bullet1: "Supported company growth by defining clean production processes.",
+                card1_bullet2: "Created an ERP-like software to track production.",
+                card2_title: "Audit compliance",
+                card2_bullet1: "Improved critical parts workshop tidyness.",
+                card2_bullet2: "Introduced improvements continuously to meet clients' expectations.",
+                card3_title: "Preventing supply disruptions",
+                card3_bullet1: "Helped company anticipate part shortages by building a predictive algorithm.",
+                card3_bullet2: "Created a live dashboard to track each part.",
+                card4_title: "Task automation",
+                card4_bullet1: "Saved each coworker over 1 hour a week.",
+                card4_bullet2: "Developed custom automations for low added value tasks and reporting.",
+                pricing_heading: "Pricing",
+                pricing_subtitle: "Because your business is unique, I offer flexible plans.",
+                tier1_title: "Video Call",
+                tier1_subtitle: "A quick session to discuss your biggest operational headache and see if I can bring a good fix.",
+                tier1_feat1: "30 minutes call",
+                tier1_feat2: "High-level bottleneck identification",
+                tier2_title: "Audit & Report",
+                tier2_subtitle: "An investigation of your physical workflows and software tools to eliminate your business's top bottlenecks.",
+                tier2_feat1: "On-site shop floor walkthrough",
+                tier2_feat2: "Digital workflow assessment",
+                tier2_feat3: "Comprehensive PDF report",
+                tier2_feat4: "A step-by-step proposition plan",
+                tier2_footnote: "*Depending on audit length and travel expenses",
+                tier3_title: "Lean Partnership",
+                tier3_subtitle: "On-demand engineering expertise to actively cut waste and lock in your margins.",
+                price_per_hour: "/ hour",
+                tier3_feat1: "Custom software engineering",
+                tier3_feat2: "Continuous process optimization",
+                tier3_feat3: "Hands-on team training",
+                tier3_feat4: "On-call engineering support",
+                contact_heading: "Let's work <br>together",
+                reach_travel: "On-site regional travel in Benelux, near <b>Luik (Belgium)</b>",
+                reach_remote: "<b>Worldwide</b> remote execution",
+                linkedin_label: "LinkedIn Profile"
+            },
+            fr: {
+                nav_projects: "Projets",
+                nav_pricing: "Tarifs",
+                nav_contact: "Collaborer",
+                kicker: "EFFICACE, AUTOMATIQUE.",
+                hero_h1: "Éliminez le chaos opérationnel.<br>Maximisez vos marges.",
+                hero_desc: "Des difficultés dans l'atelier aux tâches administratives répétitives, j'élimine le gaspillage qui freine votre entreprise.",
+                btn_book: "Réservez un appel GRATUIT",
+                projects_heading: "Projets",
+                proj_growth: "<span>📈</span>Croissance",
+                proj_quality: "<span>💎</span>Qualité",
+                proj_supply: "<span>📦</span>Supply Chain",
+                proj_efficiency: "<span>⚡</span>Efficacité",
+                card1_title: "De l'artisanat à l'industrie",
+                card1_bullet1: "Accompagnement de la croissance de l'entreprise en définissant des processus de production clairs.",
+                card1_bullet2: "Création d'un logiciel de type ERP pour suivre la production.",
+                card2_title: "Conformité aux audits",
+                card2_bullet1: "Amélioration du rangement et de l'organisation d'un atelier de pièces critiques.",
+                card2_bullet2: "Mise en place continue d'améliorations pour répondre aux attentes des clients.",
+                card3_title: "Prévention des ruptures d'approvisionnement",
+                card3_bullet1: "Anticipation des pénuries de pièces en développant un algorithme prédictif.",
+                card3_bullet2: "Création d'un tableau de bord en temps réel pour suivre chaque pièce.",
+                card4_title: "Automatisation des tâches",
+                card4_bullet1: "Chaque collaborateur gagne plus d'une heure par semaine.",
+                card4_bullet2: "Développement d'automatisations sur mesure pour les tâches à faible valeur ajoutée et le reporting.",
+                pricing_heading: "Tarifs",
+                pricing_subtitle: "Parce que votre entreprise est unique, je propose des formules flexibles.",
+                tier1_title: "Appel vidéo",
+                tier1_subtitle: "Une session rapide pour discuter de votre plus gros problème opérationnel et voir si je peux y apporter une solution.",
+                tier1_feat1: "Appel de 30 minutes",
+                tier1_feat2: "Identification globale des problèmes opérationnels",
+                tier2_title: "Audit & Rapport",
+                tier2_subtitle: "Une analyse de vos flux physiques et de vos outils logiciels pour éliminer les principaux goulots d'étranglement de votre entreprise.",
+                tier2_feat1: "Visite de l'atelier sur site",
+                tier2_feat2: "Évaluation des flux numériques",
+                tier2_feat3: "Rapport PDF complet",
+                tier2_feat4: "Un plan d'action détaillé",
+                tier2_footnote: "*Selon la durée de l'audit et les frais de déplacement",
+                tier3_title: "Partenariat Lean",
+                tier3_subtitle: "Une expertise d'ingénierie à la demande pour réduire activement le gaspillage et sécuriser vos marges.",
+                price_per_hour: "/ heure",
+                tier3_feat1: "Développement logiciel sur mesure",
+                tier3_feat2: "Optimisation continue des processus",
+                tier3_feat3: "Formation pratique des équipes",
+                tier3_feat4: "Support d'ingénierie sur demande",
+                contact_heading: "Travaillons <br>ensemble",
+                reach_travel: "Déplacements régionaux au Benelux, près de <b>Liège (Belgique)</b>",
+                reach_remote: "Exécution à distance <b>dans le monde entier</b>",
+                linkedin_label: "Profil LinkedIn"
+            }
+        };
+
+        const langToggle = document.getElementById('langToggle');
+        const langFlag = document.getElementById('langFlag');
+        const langLabel = document.getElementById('langLabel');
+        const i18nEls = document.querySelectorAll('[data-i18n]');
+
+        function applyLanguage(lang) {
+            i18nEls.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // The button always shows the language you'd switch TO
+            const next = lang === 'en' ? 'fr' : 'en';
+            langFlag.src = `static/img/${next}.svg`;
+            langFlag.alt = '';
+            langLabel.textContent = next.toUpperCase();
+            langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch language to French' : 'Switch language to English');
+
+            document.documentElement.lang = lang;
+            try { localStorage.setItem('site-lang', lang); } catch (e) { /* storage unavailable, ignore */ }
+        }
+
+        let currentLang = 'fr';
+        try {
+            const saved = localStorage.getItem('site-lang');
+            if (saved === 'en' || saved === 'fr') currentLang = saved;
+        } catch (e) { /* storage unavailable, default to English */ }
+
+        applyLanguage(currentLang);
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            applyLanguage(currentLang);
         });
     </script>
 </body>
