@@ -1,0 +1,16 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="136 54 528 528" width="800" height="800">
+    <defs>
+        <mask id="cutout-mask">
+            <rect x="0" y="0" width="800" height="800" fill="white" />
+            <path id="A" fill="black" d="m299.81 582h-105.55l134.35-396h141.82l134.34 396h-105.58l-21.96-74.3l-19.17-64.89l-53.53-181.14h-9.46l-53.87 181.14l-19.3 64.89zm177.41-74.3l-19.17-64.89h-116.85l-19.3 64.89z"/>
+        </mask>
+    </defs>
+    
+    <style>
+        .s0 { fill: #1b1b1b } 
+    </style>
+    
+    <g mask="url(#cutout-mask)">
+        <path id="Forme 1" fill-rule="evenodd" class="s0" d="m399.5 565c-141.29 0-255.5-114.21-255.5-255.5 0-141.29 114.21-255.5 255.5-255.5 141.29 0 255.5 114.21 255.5 255.5 0 141.29-114.21 255.5-255.5 255.5z"/>
+    </g>
+</svg>
